@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+homepage:
+  path: /
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: index/index.html.twig
+
+#admin_login_check:
+#  path: /admin/login_check
+#
+#admin_index:
+#  path: /admin/index
