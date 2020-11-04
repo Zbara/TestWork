@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}Авторизация{% endblock %}
 {% block body %}
-
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+    <div class="col-xs-10 col-md-4 col-md-offset-4">
         <div class="login-panel panel panel-default">
             <div class="panel-heading">Авторизация</div>
             <div class="panel-body">
@@ -10,25 +9,17 @@
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
-                    {% if app.user %}
-                        <div class="mb-3">
-                            Привет {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </div>
-                    {% endif %}
                     <label for="inputEmail">Email</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="admin@example.com"
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="admin@zbara.ru"
                            class="form-control" required autofocus>
                     <label for="inputPassword">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="123654">
-
+                    <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="123456">
                     <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}"
-                    >
+                           value="{{ csrf_token('authenticate') }}">
                     <br/>
                     <button class="btn btn-lg btn-primary" type="submit">Войти</button>
                 </form>
             </div>
         </div>
     </div>
-
 {% endblock %}

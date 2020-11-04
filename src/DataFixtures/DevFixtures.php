@@ -23,7 +23,7 @@ class DevFixtures extends Fixture
     {
         $faker = Factory::create('ru_RU');
 
-        for ($i = 0; $i < 100; $i++){
+        for ($i = 0; $i < 5; $i++){
             $image = $faker->imageUrl(400,600); //fake image address
             $filename = time().mt_rand(0,1000).'.jpg'; //new file name for thumb
             $thumbPath = $this->projectDir  . '/public/photo/thumb/'.$filename; //real path for new thumb
